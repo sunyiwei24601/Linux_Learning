@@ -1979,3 +1979,64 @@ ls     list remote files
 put    upload a file from your local machine to the server
 pwd    print your remote working directory
 ```
+
+
+
+## Shell Script
+
+### 简单的函数
+
+1. `read -p "prompt" var`
+
+   这条简单的命令可以把指定的字符赋值给变量
+
+2. ` date1=$(date)`
+
+   这个就可以将命令行运行的结果赋值给某个变量,关键是要加$(),另外等号不能有空格,会被系统误解为是命令的
+
+3. 一个简单的运算表达式
+
+   `var=$((运算内容))`
+
+4. 一般来说用sh执行命令,会新开一个子客户端
+
+   如果使用`source`命令来进行的话,就会在本terminal里运行,共享变量
+
+5. $?可以查看上一个命令执行的结果如何
+
+### 判断
+
+#### test命令
+
+`test -e /dmtsai`
+
+可以用来判断文件是否存在,下面显示一些常用的指令
+
+1. -e文件名是否存在
+2. -f文件名是否存在且为文件
+3. d文件名是否存在且为目录
+4. -r文件名是否存在且为可读权限
+5. -w可写权限
+6. -x可执行权限
+7. -s非空白文件
+8. `test file1 -nt file2`file1是否比file2新
+9. -ot older than
+10. -ef判断是否是同一个文件,这里指是否指向同一个inode
+11. -eq 整数是否相等
+12. -ne是否不相等
+13. -gl greater than
+14. -lt less than
+15. -ge
+16. -le
+17. -z string判断是否为空字符串
+18. -n 是否为非空字符串
+19. str1=str2
+20. -a多重判断,同时成立
+21. -o多重判断,或成立,-o之后再写第二个条件
+22. !反向状态
+
+#### 利用判断符号[]
+
+`[ '2' == "$name" ]`
+
+这个跟上面那个差不过,关键在于每个项目之间一定要有空格才行
