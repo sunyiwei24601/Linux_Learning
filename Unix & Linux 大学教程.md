@@ -1438,6 +1438,37 @@ autoindent和shiftwidth配合使用,设置成制表符的长度就刚刚好了
 
 ![1548524807741](1548524807741.png)
 
+我lei了lei了
+
+#### 高亮块选择
+
+使用v,V或者^V进入块选择模式
+
+1. v从当前块开始移动
+2. V从当前行开始选择
+3. ^V以长方形块进行选择
+
+最后用d或者y配合p,剪切或复制
+
+#### 窗口分割
+
+`:sp`来在一个新的窗口之中打开文件,如果什么也不输入的话就是打开一个新的本文件
+
+通过^w+j/↓或者^w+k/↑ 移动到上面或者下面的窗口之中
+
+:q来退出
+
+#### 多文件操作
+
+1. :n 编辑下一个文件,:N编辑上一个文件
+2. :files 显示所有当前文件
+
+#### 命令行历史
+
+`q:`进入搜索历史的界面
+
+上下移动选择
+
 ### 语法总结
 
 ​	 k↑
@@ -1900,3 +1931,51 @@ kill同时也可以发送一些指令给应用
 ``kill [signal] pid..|jobid..``
 
 ![1548129970060](1548129970060.png)
+
+## 补充内容(来自网络)
+
+### 添加镜像地址
+
+``/etc/apt/sources.list``
+
+文件修改地址
+
+添加镜像源_清华大学	https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/
+
+```
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+```
+
+最后用sudo apt update就可以更新了
+
+### 分屏软件tmux
+
+占坑,待填
+
+### 从ssh下载文件
+
+使用 psftp.exe,使用以下命令
+
+```
+cd     change your remote working directory
+exit   finish your SFTP session
+get    download a file from the server to your local machine
+help   give help
+lcd    change local working directory
+lpwd   print local working directory
+ls     list remote files
+put    upload a file from your local machine to the server
+pwd    print your remote working directory
+```
